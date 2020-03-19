@@ -1,0 +1,20 @@
+{
+  "name": "intro-component-with-signup-form",
+  "version": "1.0.0",
+  "homepage": "https://predeyo.github.io/intro-component-with-signup-form",
+  "description": "Intro component with sign up form coding challenge",
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail \"node-sass src/ -o public/ --watch --recursive\" \"live-server --open='public/'\"",
+    "build": "node-sass src/ -o public/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public"
+  },
+  "author": "predeyo",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "gh-pages": "^2.2.0",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.13.1"
+  }
+}
