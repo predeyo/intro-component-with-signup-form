@@ -10,6 +10,7 @@ $blue: hsl(248, 32%, 49%);
 $dark-blue: hsl(249, 10%, 26%);
 $grayish-blue: hsl(246, 25%, 77%);
 $dark-green: hsl(154, 59%, 44%);
+$dark-red: hsl(0, 70%, 70%);
 
 $border-radius: 0.5rem;
 $box-shadow: 0 0.5rem 0 0 hsla(0, 0%, 0%, 0.15);
@@ -28,7 +29,7 @@ img {
   height: auto;
 }
 
-// Typography
+// Main
 
 body {
   font-family: "Poppins", sans-serif;
@@ -36,7 +37,6 @@ body {
   background: url("images/bg-intro-mobile.png") no-repeat center/cover, $red;
 }
 
-// Main
 main {
   margin: 5.8rem 1.5rem 4.4rem 1.5rem;
 }
@@ -74,14 +74,6 @@ main {
       text-align: center;
       max-width: 70%;
     }
-    // &::after {
-    //   content: " ";
-    //   position: absolute;
-    //   bottom: 0;
-    //   width: 100%;
-    //   border-radius: 0.5rem;
-    //   border-bottom: 0.5rem solid $grayish-blue;
-    // }
   }
   form {
     padding: 1rem;
@@ -99,8 +91,11 @@ main {
         .icon-error {
           display: block;
         }
-        .input {
+        input,
+        input:focus {
+          color: $red;
           padding-right: calc(1.5rem + 1.2rem + 0.5rem);
+          border: 2px solid $dark-red;
         }
         .error-msg {
           display: block;
@@ -113,15 +108,22 @@ main {
         background: transparent;
         height: 3.3rem;
         border-radius: 0.3rem;
-        padding-left: 1.2rem;
+        padding: 0 1.2rem;
+        color: black;
+        letter-spacing: -0.015rem;
+        font-weight: 600;
         &::placeholder {
           font-family: "Poppins", sans-serif;
-          letter-spacing: -0.015rem;
-          font-weight: 600;
-          color: black;
+        }
+        &:focus {
+          border-color: $dark-blue;
+        }
+        &:invalid {
+          box-shadow: none;
         }
       }
       .icon-error {
+        display: none;
         grid-column: 2/3;
         grid-row: 1;
         width: 1.5rem;
@@ -134,22 +136,34 @@ main {
         grid-row: 2;
         color: $red;
         justify-self: end;
+        font-size: 0.7rem;
+        font-weight: 500;
+        margin-top: 0.5rem;
+        font-style: italic;
+        &::first-letter {
+          text-transform: uppercase;
+        }
       }
     } /* end input block */
     button {
       background: $green;
-      border: none;
-      border-radius: 0.3rem;
       width: 100%;
       height: 3.3rem;
-      box-shadow: 0 0.3rem $dark-green;
+      padding-top: 0.4rem;
+      margin-bottom: 1rem;
       text-transform: uppercase;
+      border: none;
+      border-radius: 0.3rem;
+      box-shadow: 0 0.3rem $dark-green;
+      color: white;
       font-weight: 500;
       font-size: 0.95rem;
-      color: white;
-      padding-top: 0.4rem;
       letter-spacing: 0.04rem;
-      margin-bottom: 1rem;
+      cursor: pointer;
+      &:hover {
+        background: hsl(154, 69%, 61%);
+        box-shadow: 0 0.3rem hsl(153, 59%, 56%);
+      }
     }
     p {
       padding: 0 1rem;
@@ -158,9 +172,67 @@ main {
       text-align: center;
       font-weight: 600;
       span {
-        color: $red;
+        color: $dark-red;
         font-weight: 700;
+        cursor: pointer;
       }
     }
   } /* end form */
+}
+
+@media screen and (min-width: 55rem) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("images/bg-intro-desktop.png") no-repeat center/cover, $red;
+  }
+  main {
+    display: flex;
+    width: 100%;
+    max-width: 69.2rem;
+    margin: 2rem;
+  }
+  .first-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 33.6rem;
+    margin-right: 2rem;
+    text-align: left;
+    h1 {
+      margin-top: 4.4rem;
+      margin-bottom: 1.8rem;
+      font-size: 3rem;
+      line-height: 3.4rem;
+      letter-spacing: 0.04rem;
+    }
+  }
+  .second-section {
+    flex-grow: 1;
+    max-width: 33.6rem;
+    min-width: 25.6rem;
+    .offer-box {
+      height: 3.8rem;
+      p {
+        max-width: unset;
+      }
+    }
+    form {
+      padding: 2.3rem 2.3rem 3rem 2.3rem;
+      .input-block {
+        margin-bottom: 1.33rem;
+        &.invalid {
+          input {
+            padding-right: calc(2.1rem + 1.2rem + 0.5rem);
+          }
+        }
+        input {
+          padding: 0 2.1rem;
+        }
+      }
+    }
+  }
 }
