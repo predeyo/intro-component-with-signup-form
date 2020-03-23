@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0; }
+
+img {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: auto; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background: url("images/bg-intro-mobile.png") no-repeat center/cover, #ff7a7a; }
+
+main {
+  margin: 5.8rem 1.5rem 4.4rem 1.5rem; }
+
+.first-section {
+  text-align: center; }
+  .first-section h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 2.2rem;
+    margin-bottom: 1.4rem; }
+  .first-section p {
+    font-weight: 500;
+    line-height: 1.62rem;
+    margin-bottom: 4rem; }
+
+.second-section {
+  /* end form */ }
+  .second-section .offer-box {
+    position: relative;
+    background: #6055a5;
+    height: 5.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 0 0 rgba(0, 0, 0, 0.15);
+    margin-bottom: 1.6rem; }
+    .second-section .offer-box p {
+      text-align: center;
+      max-width: 70%; }
+      .second-section .offer-box p span {
+        font-weight: 600; }
+  .second-section form {
+    padding: 1rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 0 0 rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    /* end input block */ }
+    .second-section form .input-block {
+      display: grid;
+      grid-template-columns: 1fr calc(1.5rem + 1.2rem);
+      grid-template-rows: auto auto;
+      margin-bottom: 1.07rem; }
+      .second-section form .input-block.invalid .icon-error {
+        display: block; }
+      .second-section form .input-block.invalid input,
+      .second-section form .input-block.invalid input:focus {
+        color: #ff7a7a;
+        padding-right: calc(1.5rem + 1.2rem + 0.5rem);
+        border: 2px solid #e87d7d; }
+      .second-section form .input-block.invalid .error-msg {
+        display: block; }
+      .second-section form .input-block input {
+        grid-column: 1/3;
+        grid-row: 1;
+        border: 1px solid #e6e6e6;
+        background: transparent;
+        height: 3.3rem;
+        border-radius: 0.3rem;
+        padding: 0 1.2rem;
+        color: black;
+        letter-spacing: -0.015rem;
+        font-weight: 600; }
+        .second-section form .input-block input::placeholder {
+          font-family: "Poppins", sans-serif; }
+        .second-section form .input-block input:focus {
+          border-color: #3e3c49; }
+        .second-section form .input-block input:invalid {
+          box-shadow: none; }
+      .second-section form .input-block .icon-error {
+        display: none;
+        grid-column: 2/3;
+        grid-row: 1;
+        width: 1.5rem;
+        height: 1.5rem;
+        align-self: center; }
+      .second-section form .input-block .error-msg {
+        display: none;
+        grid-column: 1/3;
+        grid-row: 2;
+        color: #ff7a7a;
+        justify-self: end;
+        font-size: 0.7rem;
+        font-weight: 500;
+        margin-top: 0.5rem;
+        font-style: italic; }
+        .second-section form .input-block .error-msg::first-letter {
+          text-transform: uppercase; }
+    .second-section form button {
+      background: #38cc8c;
+      width: 100%;
+      height: 3.3rem;
+      padding-top: 0.4rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 0.3rem;
+      box-shadow: 0 0.3rem #2eb279;
+      color: white;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.04rem;
+      cursor: pointer; }
+      .second-section form button:hover {
+        background: #57e0a5;
+        box-shadow: 0 0.3rem #4dd195; }
+    .second-section form p {
+      padding: 0 1rem;
+      color: #cccccc;
+      font-size: 0.67rem;
+      text-align: center;
+      font-weight: 600; }
+      .second-section form p span {
+        color: #e87d7d;
+        font-weight: 700;
+        cursor: pointer; }
+
+@media screen and (min-width: 55rem) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("images/bg-intro-desktop.png") no-repeat center/cover, #ff7a7a; }
+  main {
+    display: flex;
+    width: 100%;
+    max-width: 69.2rem;
+    margin: 2rem; }
+  .first-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 33.6rem;
+    margin-right: 2rem;
+    text-align: left; }
+    .first-section h1 {
+      margin-top: 4.4rem;
+      margin-bottom: 1.8rem;
+      font-size: 3rem;
+      line-height: 3.4rem;
+      letter-spacing: 0.04rem; }
+  .second-section {
+    flex-grow: 1;
+    max-width: 33.6rem;
+    min-width: 25.6rem; }
+    .second-section .offer-box {
+      height: 3.8rem; }
+      .second-section .offer-box p {
+        max-width: unset; }
+    .second-section form {
+      padding: 2.3rem 2.3rem 3rem 2.3rem; }
+      .second-section form .input-block {
+        margin-bottom: 1.33rem; }
+        .second-section form .input-block.invalid input {
+          padding-right: calc(2.1rem + 1.2rem + 0.5rem); }
+        .second-section form .input-block input {
+          padding: 0 2.1rem; } }
